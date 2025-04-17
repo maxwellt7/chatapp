@@ -29,8 +29,7 @@ export function ChatSidebar() {
   }, [])
 
   async function handleCreateChat() {
-    // Instead of calling the server action directly,
-    // navigate to the route handler that will create the chat
+    // Navigate to the route handler that will create the chat
     router.push("/new-chat")
   }
 
@@ -65,7 +64,7 @@ export function ChatSidebar() {
             {chats.map((chat) => {
               const isActive = pathname === `/chat/${chat.id}`
               return (
-                <li key={chat.id}>
+                <li key={chat.id} className="group">
                   <Link
                     href={`/chat/${chat.id}`}
                     className={`flex items-center justify-between p-2 rounded ${
